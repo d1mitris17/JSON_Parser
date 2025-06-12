@@ -110,4 +110,4 @@ let tokenise input =
           raise
             (LexerError ("Unexpected character: " ^ String.make 1 input.[!pos]))
   done;
-  List.rev !tokens
+  List.rev !tokens @ [ EOF ]
