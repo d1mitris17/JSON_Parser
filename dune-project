@@ -5,11 +5,10 @@
 (generate_opam_files true)
 
 (source
- (github username/reponame))
+ (github d1mitris17/JSON_Parser))
 
-(authors "Author Name <author@example.com>")
+(authors "Dimtrios Doukas <dimitrios.doukas@icloud.com>")
 
-(maintainers "Maintainer Name <maintainer@example.com>")
 
 (license LICENSE)
 
