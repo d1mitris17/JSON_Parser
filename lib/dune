@@ -1,3 +1,4 @@
 (library
  (name json_parser)
- (libraries json_parser))
+ (libraries json_parser)
+ (modules ast lexer parser json_parser))
