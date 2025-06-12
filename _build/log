@@ -1,0 +1,6 @@
+# dune init project json_parser --libs json_parser
+# OCAMLPARAM: unset
+# Shared cache: enabled-except-user-rules
+# Shared cache location: /Users/dimitrisdoukas/.cache/dune/db
+# Workspace root: /Users/dimitrisdoukas/Projects/JSON_Parser/json_parser
+# Auto-detected concurrency: 8
