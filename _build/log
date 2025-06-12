@@ -1,6 +1,20 @@
-# dune init project json_parser --libs json_parser
+# dune runtest
 # OCAMLPARAM: unset
 # Shared cache: enabled-except-user-rules
 # Shared cache location: /Users/dimitrisdoukas/.cache/dune/db
-# Workspace root: /Users/dimitrisdoukas/Projects/JSON_Parser/json_parser
+# Workspace root: /Users/dimitrisdoukas/Projects/JSON_Parser
 # Auto-detected concurrency: 8
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; instrument_with = []
+#  }
+$ /Users/dimitrisdoukas/.opam/5.2.1/bin/ocamlc.opt -config > /var/folders/hb/fwsltb_s2nj4_gh98c9d401c0000gn/T/dune_cbcda8_output
+$ (cd _build/default/test && ./test_lexer.exe)
+> Running Lexer Tests:
+> Fatal error: exception Assert_failure("test/test_lexer.ml", 29, 2)
+[2]
