@@ -13,8 +13,11 @@
 #  ; build_dir = In_build_dir "default"
 #  ; instrument_with = []
 #  }
-$ /Users/dimitrisdoukas/.opam/5.2.1/bin/ocamlc.opt -config > /var/folders/hb/fwsltb_s2nj4_gh98c9d401c0000gn/T/dune_cbcda8_output
+$ /Users/dimitrisdoukas/.opam/5.2.1/bin/ocamlc.opt -config > /var/folders/hb/fwsltb_s2nj4_gh98c9d401c0000gn/T/dune_bac333_output
 $ (cd _build/default/test && ./test_lexer.exe)
 > Running Lexer Tests:
-> Fatal error: exception Assert_failure("test/test_lexer.ml", 29, 2)
+> ✓ Basic tokens test passed
+> ✓ String literals test passed
+> ✓ Numbers test passed
+> Fatal error: exception Json_parser.Lexer.LexerError("Unexpected character: t")
 [2]
