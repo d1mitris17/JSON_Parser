@@ -7,15 +7,14 @@ type json_value =
   | JsonNull
 
 type token =
-  | LeftBrace (* { *)
-  | RightBrace (* } *)
-  | LeftBracket (* [ *)
-  | RightBracket (* ] *)
+  | LBrace (* { *)
+  | RBrace (* } *)
+  | LBracket (* [ *)
+  | RBracket (* ] *)
   | Colon (* : *)
   | Comma (* , *)
   | String of string
   | Number of float
-  | TRUE
-  | FALSE
-  | NULL
+  | Bool of bool
+  | Null
   | EOF
