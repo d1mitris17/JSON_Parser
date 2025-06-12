@@ -5,3 +5,17 @@ type json_value =
   | JsonNumber of float
   | JsonBool of bool
   | JsonNull
+
+type token =
+  | LeftBrace (* { *)
+  | RightBrace (* } *)
+  | LeftBracket (* [ *)
+  | RightBracket (* ] *)
+  | Colon (* : *)
+  | Comma (* , *)
+  | String of string
+  | Number of float
+  | TRUE
+  | FALSE
+  | NULL
+  | EOF
