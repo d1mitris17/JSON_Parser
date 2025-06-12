@@ -1,5 +1,5 @@
-open Ast
-open Lexer
+open Json_parser.Ast
+open Json_parser.Lexer
 
 let rec token_lists_equal l1 l2 =
   match (l1, l2) with
@@ -25,7 +25,7 @@ let rec token_lists_equal l1 l2 =
 let test_basic_tokens () =
   let input = "{}" in
   let expected = [ LBrace; RBrace; EOF ] in
-  let actual = tokenize input in
+  let actual = tokenise input in
   assert (token_lists_equal expected actual);
   Printf.printf "✓ Basic tokens test passed\n"
 
@@ -33,7 +33,7 @@ let test_basic_tokens () =
 let test_string_literals () =
   let input = {|"hello world"|} in
   let expected = [ String "hello world"; EOF ] in
-  let actual = tokenize input in
+  let actual = tokenise input in
   assert (token_lists_equal expected actual);
   Printf.printf "✓ String literals test passed\n"
 
@@ -49,7 +49,7 @@ let test_numbers () =
   in
   List.iter
     (fun (input, expected) ->
-      let actual = tokenize input in
+      let actual = tokenise input in
       assert (token_lists_equal expected actual))
     tests;
   Printf.printf "✓ Numbers test passed\n"
@@ -65,7 +65,7 @@ let test_keywords () =
   in
   List.iter
     (fun (input, expected) ->
-      let actual = tokenize input in
+      let actual = tokenise input in
       assert (token_lists_equal expected actual))
     tests;
   Printf.printf "✓ Keywords test passed\n"
@@ -87,7 +87,7 @@ let test_complex_tokenization () =
       EOF;
     ]
   in
-  let actual = tokenize input in
+  let actual = tokenise input in
   assert (token_lists_equal expected actual);
   Printf.printf "✓ Complex tokenization test passed\n"
 
@@ -95,7 +95,7 @@ let test_complex_tokenization () =
 let test_whitespace () =
   let input = {|  {  "key"  :  "value"  }  |} in
   let expected = [ LBrace; String "key"; Colon; String "value"; RBrace; EOF ] in
-  let actual = tokenize input in
+  let actual = tokenise input in
   assert (token_lists_equal expected actual);
   Printf.printf "✓ Whitespace handling test passed\n"
 
@@ -103,7 +103,7 @@ let test_whitespace () =
 let test_escape_sequences () =
   let input = {|"hello\nworld\t\"quoted\""|} in
   let expected = [ String "hello\nworld\t\"quoted\""; EOF ] in
-  let actual = tokenize input in
+  let actual = tokenise input in
   assert (token_lists_equal expected actual);
   Printf.printf "✓ Escape sequences test passed\n"
 
@@ -118,3 +118,5 @@ let run_lexer_tests () =
   test_whitespace ();
   test_escape_sequences ();
   Printf.printf "All lexer tests passed!\n\n"
+
+let () = run_lexer_tests ()
