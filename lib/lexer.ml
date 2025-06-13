@@ -91,15 +91,15 @@ let tokenise input =
       | ',' ->
           tokens := Comma :: !tokens;
           pos := !pos + 1
-      | 'f' when String.sub input !pos 4 = "false" ->
+      | 'f' when String.sub input !pos 5 = "false" ->
           tokens := Bool false :: !tokens;
           pos := !pos + 5
-      | 't' when String.sub input !pos 3 = "true" ->
+      | 't' when String.sub input !pos 4 = "true" ->
           tokens := Bool true :: !tokens;
-          pos := !pos + 1
+          pos := !pos + 4
       | 'n' when String.sub input !pos 4 = "null" ->
           tokens := Null :: !tokens;
-          pos := !pos + 1
+          pos := !pos + 4
       | c when (c >= '0' && c <= '9') || c = '-' ->
           let int_token = consume_number () in
           tokens := int_token :: !tokens
